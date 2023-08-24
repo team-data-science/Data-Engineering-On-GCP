@@ -26,18 +26,17 @@ Message body: update<br/>
 5. Setting up CloudSQL(MySQL)
 - [ ] Compute Engine  
 Name: weather-vm<br/>
-Machine configuration:<br/>
-  -- general-purpose<br/>
-  -- series N1<br/>
-  -- machine type f1-micro<br/>
-  -- allow http and https traffic<br/>
+Machine configuration >> general-purpose:<br/>
+Series N1<br/>
+  -- Machine type: f1-micro<br/>
+  -- Allow http and https traffic<br/>
  - [ ] VPC Network  
 Name: weather-vm-ip<br/>
  - [ ] Cloud SQL
-MySQL 8.0<br/>
+Database Engine: MySQL 8.0<br/>
 Instance ID: weather-db<br/>
 Password: admin1234<br/>
-Development<br/>
+Preset: Development<br/>
 Machine type: Lightweight 1vCPU 3.75GB<br/>
 Storage: SSD 10GB with automatic storage increases<br/>
 Network >> Name: connection-db-vm<br/>
@@ -91,9 +90,9 @@ Environmental variables:<br/>
    -- project_id: weather-api-project<br/> 
    -- region: us-central1<br/> 
    -- topic_id: apiweather-extract<br/> 
-         -- Entry point: pull_from_api<br/> 
-         -- main.py - https://github.com/team-data-science/course-gcp/blob/main/code/pull_from_api.py<br/> 
-         -- requirements.txt - https://github.com/team-data-science/course-gcp/blob/main/code/pull-weather-data_requirements.txt 
+         --- Entry point: pull_from_api<br/> 
+         --- main.py - https://github.com/team-data-science/course-gcp/blob/main/code/pull_from_api.py<br/> 
+         --- requirements.txt - https://github.com/team-data-science/course-gcp/blob/main/code/pull-weather-data_requirements.txt 
 
 - [ ] Function name: weather-data-to-db
 Region: us-central1<br/> 
