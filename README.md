@@ -19,7 +19,8 @@ Description: Information about the job<br/>
 Frequency: 0 * * * *<br/> 
 Timezone: UTC<br/> 
 
-- [ ] Pub/Sub topic ID: weather_calls<br/>
+- [ ] Pub/Sub
+Topic ID: weather_calls<br/>
 Message body: update<br/>
 
 5. Setting up CloudSQL(MySQL)
@@ -72,10 +73,10 @@ CREATE TABLE IF NOT EXISTS weather_db.weather_data (
 ```
 
 6. Working-on-topic-subscription  
-- [ ] Pub/Sub topic
+- [ ] Pub/Sub topic<br/>
 Topic ID: apiweather-extract<br/>
 
-- [ ] Pub/Sub subscription
+- [ ] Pub/Sub subscription<br/>
 Subscription ID: apiweather-extract-subscription<br/>
 
 7. Creating a Cloud Function
