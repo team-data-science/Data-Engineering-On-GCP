@@ -5,7 +5,7 @@
 1. Set the environment
    
 2. Create a GCP Project
-  Project name: weather-api-project
+<br/>Project name: weather-api-project
 
 3. Activate required APIs with
 ```
