@@ -67,7 +67,7 @@ CREATE TABLE IF NOT EXISTS weather_db.weather_data (
   	temperature_c FLOAT NOT NULL,
   	feelslike_c FLOAT NOT NULL,
   	humidity FLOAT NOT NULL,
-   last_updated timestamp,
+  	last_updated timestamp,
   	wind_kph FLOAT);
 ```
 
