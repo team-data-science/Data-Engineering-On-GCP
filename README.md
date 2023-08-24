@@ -13,34 +13,34 @@ gcloud services enable cloudfunctions.googleapis.com sqladmin.googleapis.com run
 ```
 4. Setting up a Scheduler
 - [ ] Cron scheduler:  
-  Name: weather_call  
-  Region: us-central1  
-  Description → information about the job  
-  Frequency: 0 * * * *  
-  Timezone: UTC
+<br/>  Name: weather_call  
+<br/>  Region: us-central1  
+<br/>  Description: Information about the job  
+<br/>  Frequency: 0 * * * *  
+<br/>  Timezone: UTC
 
 - [ ] Pub/Sub topic ID: weather_calls
 Message body: update
 
 5. Setting up CloudSQL(MySQL)
 - [ ] Compute Engine  
-   name: weather-vm
-   Machine configuration:
-    * general-purpose
-    * series N1
-    * machine type f1-micro
-    * llow http and https traffic
+<br/>   name: weather-vm
+<br/>   Machine configuration:
+<br/>    * general-purpose
+<br/>    * series N1
+<br/>    * machine type f1-micro
+<br/>    * allow http and https traffic
  - [ ] VPC Network  
-    Name: weather-vm-ip
+<br/>    Name: weather-vm-ip
  - [ ] Cloud SQL
-    * MySQL 8.0
-    * Instance ID: weather-db
-    * Password: admin1234
-    * Development
-    * Machine type: Lightweight 1vCPU 3.75GB
-    * Storage: SSD 10GB with automatic storage increases
-    * Network >> Name: connection-db-vm
-        * VM IP address reserved
+<br/>    * MySQL 8.0
+<br/>    * Instance ID: weather-db
+<br/>    * Password: admin1234
+<br/>    * Development
+<br/>    * Machine type: Lightweight 1vCPU 3.75GB
+<br/>    * Storage: SSD 10GB with automatic storage increases
+<br/>    * Network >> Name: connection-db-vm
+<br/>        * VM IP address reserved
 - [ ] Compute Engine  
 --install mysql server
 ```
@@ -48,17 +48,18 @@ sudo apt-get update
 sudo apt-get install \
 default-mysql-server
 ```
---log in to mysql database
+<br/>--log in to mysql database
 ```
 mysql -h 34.72.233.196 \
 -u root -p
 ```
---create a weather_db database.
+<br/>--create a weather_db database.
 ```
  CREATE DATABASE weather_db;
  SHOW DATABASES; 
 ```
---create a weather_db.weather_data table
+<br/>--create a weather_db.weather_data table
+```
 CREATE TABLE IF NOT EXISTS weather_db.weather_data (
   	id INT PRIMARY KEY AUTO_INCREMENT,
   	lat FLOAT NOT NULL,
@@ -66,46 +67,57 @@ CREATE TABLE IF NOT EXISTS weather_db.weather_data (
   	temperature_c FLOAT NOT NULL,
   	feelslike_c FLOAT NOT NULL,
   	humidity FLOAT NOT NULL,
-    last_updated timestamp,
+   last_updated timestamp,
   	wind_kph FLOAT);
 ```
 
 6. Working-on-topic-subscription
 - [ ] Pub/Sub topic
-    * Topic ID: apiweather-extract
+     Topic ID: apiweather-extract
 - [ ] Pub/Sub subscription
-    * Subscription ID: apiweather-extract-subscription
+     Subscription ID: apiweather-extract-subscription
 
 7. Creating a Cloud Function
 - [ ] Function name: pull-weather-data
-    * Region: us-central1  
-    * Environment: 1st gen  
-    * Memory: 512 MiB  
-    * Environmental variables:  
-    *        api_token: your weather API token  
-    *        base_url: http://api.weatherapi.com/v1/current.json  
-    *        q: your country  
-    *        project_id: weather-api-project  
-    *        region: us-central1  
-    *        topic_id: apiweather-extract
+<br/>    Region: us-central1  
+<br/>    Environment: 1st gen  
+<br/>    Memory: 512 MiB  
+<br/>    Environmental variables:  
+<br/>      *        api_token: your weather API token  
+<br/>      *        base_url: http://api.weatherapi.com/v1/current.json  
+<br/>      *        q: your country  
+<br/>      *        project_id: weather-api-project  
+<br/>      *        region: us-central1  
+<br/>      *        topic_id: apiweather-extract  
+<br/>        *        Entry point: pull_from_api
+<br/>        *        main.py - https://github.com/team-data-science/course-gcp/blob/main/code/pull_from_api.py
+<br/>        *        requirements.txt - https://github.com/team-data-science/course-gcp/blob/main/code/pull-weather-data_requirements.txt
 
-- [ ] Function name: pull-weather-data
-    * Region: us-central1  
-    * Environment: 1st gen  
-    * Memory: 512 MiB  
-    * Environmental variables:  
-      *        api_token: your weather API token  
-      *        base_url: http://api.weatherapi.com/v1/current.json  
-      *        q: your country  
-      *        project_id: weather-api-project  
-      *        region: us-central1  
-      *        topic_id: apiweather-extract  
-        *        Entry point: pull_from_api
+- [ ] Function name: weather-data-to-db
+<br/>    Region: us-central1  
+<br/>    Environment: 1st gen  
+<br/>    Memory: 512 MiB  
+<br/>    Environmental variables:  
+<br/>      *       project_id: weather-api-project  
+<br/>      *       region: us-central1 
+<br/>      *       db_user: root
+<br/>      *       db_pass: admin1234
+<br/>      *       db_name: weather_db
+<br/>      *       instance_name: weather-db
+<br/>      *       subscription_id: apiweather-extract-subscription
+<br/>        *        Entry point: push_to_database
+<br/>        *        main.py - https://github.com/team-data-science/course-gcp/blob/main/code/push_to_database.py
+<br/>        *        requirements.txt - https://github.com/team-data-science/course-gcp/blob/main/code/weather-data-to-db_requirements.txt
 
+<br/> Testing - https://github.com/team-data-science/course-gcp/blob/main/code/testing.json
+
+8. Connect CloudSQL to Looker Studio - https://lookerstudio.google.com/
+<br/>    Instance Connection Name
+<br/>    Database name: weather_db
+<br/>    Username: root
+<br/>    Password: admin1234
+
+9. Making Dashboards
 ```
-functions-framework==3.*
-requests==2.28.2
-google-cloud-pubsub==2.15.2
+CONCAT(lat,",",long)
 ```
-10. Connect CloudSQL to Looker Studio
-11. Making Dashboards
