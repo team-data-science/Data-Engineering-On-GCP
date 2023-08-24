@@ -13,11 +13,11 @@ gcloud services enable cloudfunctions.googleapis.com sqladmin.googleapis.com run
 ```
 4. Setting up a Scheduler
 - [ ] Cron scheduler:
-Name: weather_call
-Region: us-central1
-Description: Information about the job
-Frequency: 0 * * * *
-Timezone: UTC
+Name: weather_call 
+Region: us-central1 
+Description: Information about the job 
+Frequency: 0 * * * * 
+Timezone: UTC 
 
 - [ ] Pub/Sub topic ID: weather_calls
 <br/>Message body: update
