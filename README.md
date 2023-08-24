@@ -96,9 +96,9 @@ Environmental variables:<br/>
          -- requirements.txt - https://github.com/team-data-science/course-gcp/blob/main/code/pull-weather-data_requirements.txt 
 
 - [ ] Function name: weather-data-to-db
-Region: us-central1<br/>  
-Environment: 1st gen<br/>  
-Memory: 512 MiB<br/>  
+Region: us-central1<br/> 
+Environment: 1st gen<br/> 
+Memory: 512 MiB<br/> 
 Environmental variables:<br/> 
    -- project_id: weather-api-project<br/> 
    -- region: us-central1<br/> 
