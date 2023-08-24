@@ -1,0 +1,41 @@
+{
+    "location": {
+        "name": "Toronto",
+        "region": "Ontario",
+        "country": "Canada",
+        "lat": 43.67,
+        "lon": -79.42,
+        "tz_id": "America/Toronto",
+        "localtime_epoch": 1692908458,
+        "localtime": "2023-08-24 16:20"
+    },
+    "current": {
+        "last_updated_epoch": 1692908100,
+        "last_updated": "2023-08-24 16:15",
+        "temp_c": 20.0,
+        "temp_f": 68.0,
+        "is_day": 1,
+        "condition": {
+            "text": "Overcast",
+            "icon": "//cdn.weatherapi.com/weather/64x64/day/122.png",
+            "code": 1009
+        },
+        "wind_mph": 9.4,
+        "wind_kph": 15.1,
+        "wind_degree": 100,
+        "wind_dir": "E",
+        "pressure_mb": 1011.0,
+        "pressure_in": 29.85,
+        "precip_mm": 0.0,
+        "precip_in": 0.0,
+        "humidity": 83,
+        "cloud": 100,
+        "feelslike_c": 20.0,
+        "feelslike_f": 68.0,
+        "vis_km": 14.0,
+        "vis_miles": 8.0,
+        "uv": 5.0,
+        "gust_mph": 6.3,
+        "gust_kph": 10.1
+    }
+}
