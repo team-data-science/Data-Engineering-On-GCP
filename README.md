@@ -19,17 +19,17 @@ Description: Information about the job<br/>
 Frequency: 0 * * * *<br/> 
 Timezone: UTC<br/> 
 
-- [ ] Pub/Sub topic ID: weather_calls
+- [ ] Pub/Sub topic ID: weather_calls<br/>
 Message body: update<br/>
 
 5. Setting up CloudSQL(MySQL)
 - [ ] Compute Engine  
 Name: weather-vm<br/>
 Machine configuration:<br/>
-* general-purpose
-* series N1
-* machine type f1-micro
-* allow http and https traffic
+  -- general-purpose
+  -- series N1
+  -- machine type f1-micro
+  -- allow http and https traffic
  - [ ] VPC Network  
 Name: weather-vm-ip<br/>
  - [ ] Cloud SQL
@@ -40,7 +40,7 @@ Development<br/>
 Machine type: Lightweight 1vCPU 3.75GB<br/>
 Storage: SSD 10GB with automatic storage increases<br/>
 Network >> Name: connection-db-vm<br/>
--- VM IP address reserved<br/>
+--VM IP address reserved<br/>
 - [ ] Compute Engine  
 --install mysql server<br/>
 ```
@@ -84,31 +84,31 @@ Region: us-central1<br/>
 Environment: 1st gen<br/>
 Memory: 512 MiB<br/>  
 Environmental variables:<br/>  
-*        api_token: your weather API token  
-*        base_url: http://api.weatherapi.com/v1/current.json  
-*        q: your country  
-*        project_id: weather-api-project  
-*        region: us-central1  
-*        topic_id: apiweather-extract  
---        Entry point: pull_from_api
---        main.py - https://github.com/team-data-science/course-gcp/blob/main/code/pull_from_api.py
---        requirements.txt - https://github.com/team-data-science/course-gcp/blob/main/code/pull-weather-data_requirements.txt
+   -- api_token: your weather API token  
+   -- base_url: http://api.weatherapi.com/v1/current.json  
+   -- q: your country  
+   -- project_id: weather-api-project  
+   -- region: us-central1  
+   -- topic_id: apiweather-extract  
+         -- Entry point: pull_from_api
+         -- main.py - https://github.com/team-data-science/course-gcp/blob/main/code/pull_from_api.py
+         -- requirements.txt - https://github.com/team-data-science/course-gcp/blob/main/code/pull-weather-data_requirements.txt
 
 - [ ] Function name: weather-data-to-db
 Region: us-central1<br/>  
 Environment: 1st gen<br/>  
 Memory: 512 MiB<br/>  
 Environmental variables:<br/> 
-*       project_id: weather-api-project  
-*       region: us-central1 
-*       db_user: root
-*       db_pass: admin1234
-*       db_name: weather_db
-*       instance_name: weather-db
-*       subscription_id: apiweather-extract-subscription
---        Entry point: push_to_database
---        main.py - https://github.com/team-data-science/course-gcp/blob/main/code/push_to_database.py
---        requirements.txt - https://github.com/team-data-science/course-gcp/blob/main/code/weather-data-to-db_requirements.txt
+   -- project_id: weather-api-project  
+   -- region: us-central1 
+   -- db_user: root
+   -- db_pass: admin1234
+   -- db_name: weather_db
+   -- instance_name: weather-db
+   -- subscription_id: apiweather-extract-subscription
+         -- Entry point: push_to_database
+         -- main.py - https://github.com/team-data-science/course-gcp/blob/main/code/push_to_database.py
+         -- requirements.txt - https://github.com/team-data-science/course-gcp/blob/main/code/weather-data-to-db_requirements.txt
 
 <br/> Testing - https://github.com/team-data-science/course-gcp/blob/main/code/testing.json
 
