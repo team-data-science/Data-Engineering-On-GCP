@@ -1,5 +1,5 @@
 ## Architecture of the course
-<img src="https://github.com/team-data-science/dev-data-engineering-on-GCP/blob/main/1-Set_the_environment/Set%20the%20environment/Architecture.png">
+<img src="https://github.com/team-data-science/course-gcp/blob/main/images/Architecture.png">
 
 
 1. Set the environment
@@ -40,7 +40,7 @@ gcloud services enable cloudfunctions.googleapis.com sqladmin.googleapis.com run
 <br/>    * Machine type: Lightweight 1vCPU 3.75GB
 <br/>    * Storage: SSD 10GB with automatic storage increases
 <br/>    * Network >> Name: connection-db-vm
-<br/>        * VM IP address reserved
+<br/>        -- VM IP address reserved
 - [ ] Compute Engine  
 --install mysql server
 ```
@@ -89,9 +89,9 @@ CREATE TABLE IF NOT EXISTS weather_db.weather_data (
 <br/>      *        project_id: weather-api-project  
 <br/>      *        region: us-central1  
 <br/>      *        topic_id: apiweather-extract  
-<br/>        *        Entry point: pull_from_api
-<br/>        *        main.py - https://github.com/team-data-science/course-gcp/blob/main/code/pull_from_api.py
-<br/>        *        requirements.txt - https://github.com/team-data-science/course-gcp/blob/main/code/pull-weather-data_requirements.txt
+<br/>        --        Entry point: pull_from_api
+<br/>        --        main.py - https://github.com/team-data-science/course-gcp/blob/main/code/pull_from_api.py
+<br/>        --        requirements.txt - https://github.com/team-data-science/course-gcp/blob/main/code/pull-weather-data_requirements.txt
 
 - [ ] Function name: weather-data-to-db
 <br/>    Region: us-central1  
@@ -105,9 +105,9 @@ CREATE TABLE IF NOT EXISTS weather_db.weather_data (
 <br/>      *       db_name: weather_db
 <br/>      *       instance_name: weather-db
 <br/>      *       subscription_id: apiweather-extract-subscription
-<br/>        *        Entry point: push_to_database
-<br/>        *        main.py - https://github.com/team-data-science/course-gcp/blob/main/code/push_to_database.py
-<br/>        *        requirements.txt - https://github.com/team-data-science/course-gcp/blob/main/code/weather-data-to-db_requirements.txt
+<br/>        --        Entry point: push_to_database
+<br/>        --        main.py - https://github.com/team-data-science/course-gcp/blob/main/code/push_to_database.py
+<br/>        --        requirements.txt - https://github.com/team-data-science/course-gcp/blob/main/code/weather-data-to-db_requirements.txt
 
 <br/> Testing - https://github.com/team-data-science/course-gcp/blob/main/code/testing.json
 
