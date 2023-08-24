@@ -1,0 +1,6 @@
+functions-framework==3.*
+SQLAlchemy==2.0.2
+pandas==1.5.3
+pyarrow==10.0.1
+cloud-sql-python-connector[pymysql]==1.2.0
+google-cloud-pubsub==2.15.2
