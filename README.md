@@ -12,12 +12,12 @@
 gcloud services enable cloudfunctions.googleapis.com sqladmin.googleapis.com run.googleapis.com cloudbuild.googleapis.com artifactregistry.googleapis.com eventarc.googleapis.com compute.googleapis.com servicenetworking.googleapis.com pubsub.googleapis.com logging.googleapis.com
 ```
 4. Setting up a Scheduler
-- [ ] Cron scheduler:  
-<br/>Name: weather_call  
-<br/>Region: us-central1  
-<br/>Description: Information about the job  
-<br/>Frequency: 0 * * * *  
-<br/>Timezone: UTC
+- [ ] Cron scheduler:
+Name: weather_call
+Region: us-central1
+Description: Information about the job
+Frequency: 0 * * * *
+Timezone: UTC
 
 - [ ] Pub/Sub topic ID: weather_calls
 <br/>Message body: update
