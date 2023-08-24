@@ -80,40 +80,39 @@ Topic ID: apiweather-extract<br/>
 Subscription ID: apiweather-extract-subscription<br/>
 
 7. Creating a Cloud Function
-- [ ] Function name: pull-weather-data
-Region: us-central1<br/>  
-Environment: 1st gen<br/>
-Memory: 512 MiB<br/>  
-Environmental variables:<br/>  
-   -- api_token: your weather API token<br/>   
-   -- base_url: http://api.weatherapi.com/v1/current.json<br/>   
-   -- q: your country<br/>   
-   -- project_id: weather-api-project<br/>   
-   -- region: us-central1<br/>   
-   -- topic_id: apiweather-extract<br/>   
+- [ ] Function name: pull-weather-data 
+Region: us-central1<br/> 
+Environment: 1st gen<br/> 
+Memory: 512 MiB<br/> 
+Environmental variables:<br/> 
+   -- api_token: your weather API token<br/> 
+   -- base_url: http://api.weatherapi.com/v1/current.json<br/> 
+   -- q: your country<br/> 
+   -- project_id: weather-api-project<br/> 
+   -- region: us-central1<br/> 
+   -- topic_id: apiweather-extract<br/> 
          -- Entry point: pull_from_api<br/> 
          -- main.py - https://github.com/team-data-science/course-gcp/blob/main/code/pull_from_api.py<br/> 
-         -- requirements.txt - https://github.com/team-data-science/course-gcp/blob/main/code/pull-weather-data_requirements.txt
+         -- requirements.txt - https://github.com/team-data-science/course-gcp/blob/main/code/pull-weather-data_requirements.txt 
 
 - [ ] Function name: weather-data-to-db
 Region: us-central1<br/>  
 Environment: 1st gen<br/>  
 Memory: 512 MiB<br/>  
 Environmental variables:<br/> 
-   -- project_id: weather-api-project<br/>   
-   -- region: us-central1<br/>  
+   -- project_id: weather-api-project<br/> 
+   -- region: us-central1<br/> 
    -- db_user: root<br/> 
    -- db_pass: admin1234<br/> 
    -- db_name: weather_db<br/> 
    -- instance_name: weather-db<br/> 
    -- subscription_id: apiweather-extract-subscription<br/> 
-         -- Entry point: push_to_database<br/> 
-         -- main.py - https://github.com/team-data-science/course-gcp/blob/main/code/push_to_database.py<br/> 
-         -- requirements.txt - https://github.com/team-data-science/course-gcp/blob/main/code/weather-data-to-db_requirements.txt<br/> 
+         --- Entry point: push_to_database<br/> 
+         --- main.py - https://github.com/team-data-science/course-gcp/blob/main/code/push_to_database.py<br/> 
+         --- requirements.txt - https://github.com/team-data-science/course-gcp/blob/main/code/weather-data-to-db_requirements.txt<br/> 
+<br/> Testing - https://github.com/team-data-science/course-gcp/blob/main/code/testing.json 
 
-<br/> Testing - https://github.com/team-data-science/course-gcp/blob/main/code/testing.json
-
-8. Connect CloudSQL to Looker Studio - https://lookerstudio.google.com/
+8. Connect CloudSQL to Looker Studio - https://lookerstudio.google.com/<br/>
 Instance Connection Name<br/>
 Database name: weather_db<br/>
 Username: root<br/>
