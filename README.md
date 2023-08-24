@@ -71,11 +71,11 @@ CREATE TABLE IF NOT EXISTS weather_db.weather_data (
   	wind_kph FLOAT);
 ```
 
-6. Working-on-topic-subscription
+6. Working-on-topic-subscription  
 - [ ] Pub/Sub topic
-     Topic ID: apiweather-extract
+<br/>  Topic ID: apiweather-extract
 - [ ] Pub/Sub subscription
-     Subscription ID: apiweather-extract-subscription
+<br/>  Subscription ID: apiweather-extract-subscription
 
 7. Creating a Cloud Function
 - [ ] Function name: pull-weather-data
