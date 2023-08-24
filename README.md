@@ -20,7 +20,7 @@ gcloud services enable cloudfunctions.googleapis.com sqladmin.googleapis.com run
 <br/>  Timezone: UTC
 
 - [ ] Pub/Sub topic ID: weather_calls
-Message body: update
+<br/>  Message body: update
 
 5. Setting up CloudSQL(MySQL)
 - [ ] Compute Engine  
