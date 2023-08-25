@@ -87,7 +87,7 @@ Environmental variables:<br/>
    -- api_token: your weather API token<br/> 
    -- base_url: http://api.weatherapi.com/v1/current.json<br/> 
    -- q: your country<br/> 
-   -- project_id: weather-api-project<br/> 
+   -- project_id: yourProjectId<br/> 
    -- region: us-central1<br/> 
    -- topic_id: apiweather-extract<br/> 
          --- Entry point: pull_from_api<br/> 
@@ -99,7 +99,7 @@ Region: us-central1<br/>
 Environment: 1st gen<br/> 
 Memory: 512 MiB<br/> 
 Environmental variables:<br/> 
-   -- project_id: weather-api-project<br/> 
+   -- project_id: yourProjectId<br/> 
    -- region: us-central1<br/> 
    -- db_user: root<br/> 
    -- db_pass: admin1234<br/> 
