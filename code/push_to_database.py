@@ -69,7 +69,6 @@ def push_to_database(event, context):
             data = pd.json_normalize(json_response)
             mask = ["location.lat", "location.lon", "current.temp_c", "current.feelslike_c", "current.humidity","current.last_updated","current.wind_kph"]
             data_to_ingest = data[mask]
-            data["current.last_updated"] = pd.to_datetime(data["current.last_updated"])
             lat, lon, temp_c, feelslike_c, humidity, last_updated, wind_kph = [row.values[0] for col, row in data_to_ingest.items()]
 
             db_conn.execute(insert_stmt, parameters={"lat": lat, "lon": lon, "temperature_c": temp_c,
