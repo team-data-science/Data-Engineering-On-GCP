@@ -50,7 +50,7 @@ default-mysql-server
 ```
 --log in to mysql database<br/>
 ```
-mysql -h 34.72.233.196 \
+mysql -h <weather-vm-ip (external static IP)> \
 -u root -p
 ```
 --create a weather_db database.<br/>
