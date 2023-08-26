@@ -123,5 +123,5 @@ Password: admin1234<br/>
 
 9. Making Dashboards
 ```
-CONCAT(lat,",",long)
+CONCAT(lat,",",lon)
 ```
