@@ -98,7 +98,7 @@ Environmental variables:<br/>
          --- main.py - https://github.com/team-data-science/course-gcp/blob/main/code/pull_from_api.py<br/> 
          --- requirements.txt - https://github.com/team-data-science/course-gcp/blob/main/code/pull-weather-data_requirements.txt 
 
-- [ ] Function name: weather-data-to-db
+- [ ] Function name: weather-data-to-db<br/>
 Region: us-central1<br/> 
 Environment: 1st gen<br/> 
 Memory: 512 MiB<br/> 
