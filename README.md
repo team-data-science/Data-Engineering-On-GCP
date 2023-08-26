@@ -83,7 +83,7 @@ Topic ID: apiweather-extract<br/>
 Subscription ID: apiweather-extract-subscription<br/>
 
 7. Creating a Cloud Function
-- [ ] Function name: pull-weather-data 
+- [ ] Function name: pull-weather-data<br/>   
 Region: us-central1<br/> 
 Environment: 1st gen<br/> 
 Memory: 512 MiB<br/> 
