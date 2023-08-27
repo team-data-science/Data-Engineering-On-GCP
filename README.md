@@ -53,6 +53,7 @@ default-mysql-server
 mysql -h <weather-vm-ip (external static IP)> \
 -u root -p
 ```
+For example,
 ```
 mysql -h 34.72.233.196 \
 -u root -p
