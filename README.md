@@ -50,7 +50,7 @@ default-mysql-server
 ```
 --log in to mysql database<br/>
 ```
-mysql -h <weather-vm-ip (external static IP)> \
+mysql -h <weather-db> \
 -u root -p
 ```
 For example,
