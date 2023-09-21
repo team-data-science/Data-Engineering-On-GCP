@@ -53,14 +53,15 @@ def push_to_database(event, context):
             db_conn.execute(
             sqlalchemy.text(
                     """CREATE TABLE IF NOT EXISTS weather_data (
-                    id INT PRIMARY KEY AUTO_INCREMENT,
-                    lat FLOAT NOT NULL,
-                    lon FLOAT NOT NULL, 
-                    temperature_c FLOAT NOT NULL,
-                    feelslike_c FLOAT NOT NULL, 
-                    humidity FLOAT NOT NULL,
-                    last_updated timestamp,
-                    wind_kph FLOAT); """)
+                        id INT PRIMARY KEY AUTO_INCREMENT,
+                        lat FLOAT NOT NULL,
+                        lon FLOAT NOT NULL,
+                        temperature_c FLOAT NOT NULL,
+                        feelslike_c FLOAT NOT NULL,
+                        humidity FLOAT NOT NULL,
+                        last_updated timestamp,
+                        wind_kph FLOAT,
+                        name varchar(255));""")
                 )
             # insert data into our weather_data table
             insert_stmt = sqlalchemy.text(
