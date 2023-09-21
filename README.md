@@ -65,15 +65,16 @@ mysql -h 34.72.233.196 \
 ```
 --create a weather_db.weather_data table<br/>
 ```
-CREATE TABLE IF NOT EXISTS weather_db.weather_data (
-  	id INT PRIMARY KEY AUTO_INCREMENT,
-  	lat FLOAT NOT NULL,
-  	lon FLOAT NOT NULL,
-  	temperature_c FLOAT NOT NULL,
-  	feelslike_c FLOAT NOT NULL,
-  	humidity FLOAT NOT NULL,
-  	last_updated timestamp,
-  	wind_kph FLOAT);
+CREATE TABLE IF NOT EXISTS weather_data (
+                        id INT PRIMARY KEY AUTO_INCREMENT,
+                        lat FLOAT NOT NULL,
+                        lon FLOAT NOT NULL,
+                        temperature_c FLOAT NOT NULL,
+                        feelslike_c FLOAT NOT NULL,
+                        humidity FLOAT NOT NULL,
+                        last_updated timestamp,
+                        wind_kph FLOAT,
+                        name varchar(255));
 ```
 
 6. Working-on-topic-subscription  
@@ -91,7 +92,7 @@ Memory: 512 MiB<br/>
 Environmental variables:<br/> 
    -- api_token: your weather API token<br/> 
    -- base_url: http://api.weatherapi.com/v1/current.json<br/> 
-   -- q: your country<br/> 
+   -- q: your country/city<br/> 
    -- project_id: yourProjectId<br/> 
    -- region: us-central1<br/> 
    -- topic_id: apiweather-extract<br/> 
