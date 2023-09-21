@@ -93,7 +93,7 @@ def push_to_database(event, context):
             # check if there are results 
             if len(results.fetchmany())==0:
                 # if there's no result we are good to write the datapoint to the db
-                print("\n****************** SQL doesn't have output ***********************")
+                print("\n****************** Writing to SQL database ***********************")
                 db_conn.execute(insert_stmt, parameters={"lat": lat, "lon": lon, "temperature_c": temp_c,
                                         "feelslike_c": feelslike_c, "humidity":humidity, "last_updated": last_updated,
                                         "wind_kph":wind_kph, "name":name})
@@ -124,8 +124,8 @@ def push_to_database(event, context):
     with subscriber:
         try:
             # When `timeout` is not set, result() will block indefinitely,
-            # unless an exception is encountered first. Let's close the connection after 1 second
-            future.result(timeout= 1.0)
+            # unless an exception is encountered first. Let's close the connection after 5 seconds
+            future.result(timeout= 5)
         except futures.TimeoutError:
             future.cancel()  # Trigger the shutdown.
             future.result()  # Block until the shutdown is complete.

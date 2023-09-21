@@ -80,7 +80,7 @@ def hello_pubsub(cloud_event):
             # check if there are results 
             if len(results.fetchmany())==0:
                 # if there's no result we are good to write the datapoint to the db
-                print("\n****************** SQL doesn't have output ***********************")
+                print("\n****************** Writing to SQL database ***********************")
                 db_conn.execute(insert_stmt, parameters={ "lat": location['lat'], "lon": location['lon'], "temperature_c": current['temp_c'],
                                 "feelslike_c": current['feelslike_c'], "humidity":current['humidity'], "last_updated": dt,
                                 "wind_kph":current['wind_kph'], "name": city})
