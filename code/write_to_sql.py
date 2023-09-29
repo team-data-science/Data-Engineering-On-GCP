@@ -17,7 +17,7 @@ INSTANCE_CONNECTION_NAME = f"{PROJECT_ID}:{REGION}:{INSTANCE_NAME}"
 
 # Triggered from a message on a Cloud Pub/Sub topic.
 @functions_framework.cloud_event
-def hello_pubsub(cloud_event):
+def write_to_database(cloud_event):
 
     def ingest_to_db(str_record):
 	    # function to return the database connection object
