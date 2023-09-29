@@ -100,6 +100,23 @@ Environmental variables:<br/>
          --- main.py - https://github.com/team-data-science/course-gcp/blob/main/code/pull_from_api.py<br/> 
          --- requirements.txt - https://github.com/team-data-science/course-gcp/blob/main/code/pull-weather-data_requirements.txt 
 
+- [ ] Function name: write-to-sql<br/>
+Region: us-central1<br/> 
+Environment: 2st gen<br/> 
+Memory: 256 MiB<br/> 
+Environmental variables:<br/> 
+   -- project_id: yourProjectId<br/> 
+   -- region: us-central1<br/> 
+   -- db_user: root<br/> 
+   -- db_pass: admin1234<br/> 
+   -- db_name: weather_db<br/> 
+   -- instance_name: weather-db<br/>  
+         --- Entry point: write_to_database<br/> 
+         --- main.py - https://github.com/team-data-science/course-gcp/blob/main/code/push_to_database.py<br/> 
+         --- requirements.txt - https://github.com/team-data-science/course-gcp/blob/main/code/weather-data-to-db_requirements.txt<br/> 
+<br/> Testing - https://github.com/team-data-science/course-gcp/blob/main/code/testing.json 
+
+
 - [ ] Function name: weather-data-to-db<br/>
 Region: us-central1<br/> 
 Environment: 1st gen<br/> 
@@ -113,7 +130,7 @@ Environmental variables:<br/>
    -- instance_name: weather-db<br/> 
    -- subscription_id: apiweather-extract-subscription<br/> 
          --- Entry point: push_to_database<br/> 
-         --- main.py - https://github.com/team-data-science/course-gcp/blob/main/code/push_to_database.py<br/> 
+         --- main.py - https://github.com/team-data-science/course-gcp/blob/main/code/write_to_sql.py<br/> 
          --- requirements.txt - https://github.com/team-data-science/course-gcp/blob/main/code/weather-data-to-db_requirements.txt<br/> 
 <br/> Testing - https://github.com/team-data-science/course-gcp/blob/main/code/testing.json 
 
