@@ -50,14 +50,15 @@ def write_to_database(cloud_event):
             db_conn.execute(
             sqlalchemy.text(
                     """CREATE TABLE IF NOT EXISTS weather_data (
-                    id varchar(255) PRIMARY KEY,
+                    id INT PRIMARY KEY AUTO_INCREMENT,
                     lat FLOAT NOT NULL,
-                    lon FLOAT NOT NULL, 
+                    lon FLOAT NOT NULL,
                     temperature_c FLOAT NOT NULL,
-                    feelslike_c FLOAT NOT NULL, 
+                    feelslike_c FLOAT NOT NULL,
                     humidity FLOAT NOT NULL,
                     last_updated timestamp,
-                    wind_kph FLOAT); """)
+                    wind_kph FLOAT,
+                    name varchar(255)); """)
                 )
             
             # craete the general insert statement which we use to put the data into the database
