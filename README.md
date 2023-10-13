@@ -112,7 +112,7 @@ Environmental variables:<br/>
    -- db_name: weather_db<br/> 
    -- instance_name: weather-db<br/>  
          --- Entry point: write_to_database<br/> 
-         --- main.py - https://github.com/team-data-science/course-gcp/blob/main/code/push_to_database.py<br/> 
+         --- main.py - https://github.com/team-data-science/Data-Engineering-On-GCP/blob/main/code/write_to_sql.py<br/> 
          --- requirements.txt - https://github.com/team-data-science/course-gcp/blob/main/code/weather-data-to-db_requirements.txt<br/> 
 <br/> Testing - https://github.com/team-data-science/course-gcp/blob/main/code/testing.json 
 
@@ -130,7 +130,7 @@ Environmental variables:<br/>
    -- instance_name: weather-db<br/> 
    -- subscription_id: apiweather-extract-subscription<br/> 
          --- Entry point: push_to_database<br/> 
-         --- main.py - https://github.com/team-data-science/course-gcp/blob/main/code/write_to_sql.py<br/> 
+         --- main.py - https://github.com/team-data-science/Data-Engineering-On-GCP/blob/main/code/push_to_database.py<br/> 
          --- requirements.txt - https://github.com/team-data-science/course-gcp/blob/main/code/weather-data-to-db_requirements.txt<br/> 
 <br/> Testing - https://github.com/team-data-science/course-gcp/blob/main/code/testing.json 
 
